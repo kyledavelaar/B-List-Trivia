@@ -1,0 +1,39 @@
+.App {
+  text-align: center;
+}
+
+.image-holder {
+  text-align: center;
+  display: block;
+  margin: auto;
+  background-color: blue;
+  height: 1000px;
+  width: 800px;
+}
+
+.img {
+  padding-top: 50px;
+  text-align: center;
+  display: block;
+  margin: auto;
+  max-width: 600px;
+  max-height: 400px;
+}
+
+.btn {
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 300;
+  background-color: black;
+  padding: 15px;
+  border-radius: 15px;
+  margin: 10px;
+}
+
+.score {
+  display: inline-block;
+  margin: 10px;
+  font-size: 24px;
+  color: white;
+}
