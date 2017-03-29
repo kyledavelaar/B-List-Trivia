@@ -7,6 +7,7 @@ import Countdown from './Countdown';
 import correct from './sound/correct.mp3';
 import wrong from './sound/wrong.mp3';
 import gthang from './sound/gthang.mp3';
+import bg from './images/bg.jpg';
 
 
 
@@ -29,7 +30,7 @@ export default class App extends Component {
   // }
 
   checkAnswer(clicked) {
-    if (clicked === Answers.answer[this.state.round].correct && this.state.outOfTime === false) {
+    if (clicked === Answers.answer[this.state.round].correct) {
       this.updateScoreAndChangeRound();
       return (
         <audio src={correct} autoplay></audio>
@@ -48,22 +49,20 @@ export default class App extends Component {
   updateScoreAndChangeRound() {
     this.setState(Object.assign({}, this.state, {score: this.state.score + 1, round: this.state.round + 1}));
     let correct = document.getElementById("correct");
+    correct.currentTime = 0.5;
     correct.play();
   }
 
   moveToNextRound() {
     this.setState(Object.assign({}, this.state, {round: this.state.round + 1}));
     let wrong = document.getElementById("wrong");
+    wrong.currentTime = 0.5;
     wrong.play();
-  }
-
-  componentDidMount() {
-    //this.startTimer()
   }
 
   render() {
     return (
-      <div className="App">
+      <div className="App" >
      {/* <ReactAudioPlayer src={gthang} autoPlay />*/}
         <audio id="correct" src={correct}></audio>
         <audio id="wrong" src={wrong}></audio>

@@ -1,5 +1,6 @@
 body {
-  background-color: tan;
+  /*background-image: 'url("./images/bg.jpg")';*/
+  font-family: Helvetica, sans-serif;
 }
 
 .App {
@@ -29,10 +30,12 @@ body {
   text-transform: uppercase;
   color: white;
   font-weight: 300;
-  background-color: black;
+  background-color: rgb(86.9%, 18.5%, 87.8%);
   padding: 15px;
   border-radius: 15px;
   margin: 10px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
+  transition: all 0.07s;
 }
 
 .score {
