@@ -11,9 +11,18 @@ body {
   text-align: center;
   display: block;
   margin: auto;
-  background-color:rgb(38.8%, 55.3%, 71%);
-  height: 1000px;
+  /*background-color:rgb(38.8%, 55.3%, 71%);*/
+  height: 800px;
   width: 800px;
+/* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#696e8e+11,8989ba+65,8989ba+65,8989ba+74,8989ba+74,696e8e+95 */
+background: #696e8e; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #696e8e 11%, #8989ba 65%, #8989ba 65%, #8989ba 74%, #8989ba 74%, #696e8e 95%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  #696e8e 11%,#8989ba 65%,#8989ba 65%,#8989ba 74%,#8989ba 74%,#696e8e 95%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  #696e8e 11%,#8989ba 65%,#8989ba 65%,#8989ba 74%,#8989ba 74%,#696e8e 95%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#696e8e', endColorstr='#696e8e',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+
+
 }
 
 .img {
@@ -30,12 +39,18 @@ body {
   text-transform: uppercase;
   color: white;
   font-weight: 300;
-  background-color: rgb(86.9%, 18.5%, 87.8%);
+  /*background-color: rgb(86.9%, 18.5%, 87.8%);*/
   padding: 15px;
   border-radius: 15px;
   margin: 10px;
   box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
-  transition: all 0.07s;
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#fb83fa+0,fb83fa+50,e93cec+100 */
+background: #fb83fa; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #fb83fa 0%, #fb83fa 50%, #e93cec 100%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  #fb83fa 0%,#fb83fa 50%,#e93cec 100%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  #fb83fa 0%,#fb83fa 50%,#e93cec 100%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb83fa', endColorstr='#e93cec',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
 }
 
 .score {
