@@ -6,7 +6,7 @@ import Countdown from './Countdown';
 
 import correct from './sound/correct.mp3';
 import wrong from './sound/wrong.mp3';
-import gthang from './sound/gthang.mp3';
+import fame from './sound/fame.mp3';
 import bg from './images/bg.jpg';
 
 
@@ -17,7 +17,7 @@ export default class App extends Component {
     this.state = {
       score: 0,
       round: 0,
-      outOfTime: false,
+      playAgain: false,
     }
   }
 
@@ -29,20 +29,21 @@ export default class App extends Component {
   //   }, 4000)
   // }
 
+  playAgain() {
+    return (
+      <div><button>{this.state.playAgain}</button></div>
+    )
+  }
+
   checkAnswer(clicked) {
     if (clicked === Answers.answer[this.state.round].correct) {
       this.updateScoreAndChangeRound();
-      return (
-        <audio src={correct} autoplay></audio>
-      )
     } else {
       this.moveToNextRound();
     }
     if (this.state.round === 5) {
-      //end game and declare winner/loser 
-      //keeps going even if get wrong answer at last one
-         //this.setState(Object.assign({}, this.state, {score: this.state.score + 1}))
-      console.log('game over')
+      this.setState({playAgain: !this.state.playAgain})
+      console.log('finished')
     }
   }
 
@@ -63,7 +64,6 @@ export default class App extends Component {
   render() {
     return (
       <div className="App" >
-     {/* <ReactAudioPlayer src={gthang} autoPlay />*/}
         <audio id="correct" src={correct}></audio>
         <audio id="wrong" src={wrong}></audio>
     
@@ -85,7 +85,9 @@ export default class App extends Component {
             <div className="score-holder">
               <h4 className="score" >SCORE: {this.state.score} </h4> 
             </div>
-         {/*   <Countdown />*/}
+             {/*   <Countdown />*/}
+            {this.state.playAgain && <Countdown />}
+            {/*<ReactAudioPlayer className="audio" src={fame} autoPlay />*/}
           </div>
         </div>
       </div>
