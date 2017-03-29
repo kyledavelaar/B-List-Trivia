@@ -9,7 +9,7 @@ import vid from './sound/lights.mp4';
 import correct from './sound/correct.mp3';
 import wrong from './sound/wrong.mp3';
 import fame from './sound/fame.mp3';
-import bg from './images/bg.jpg';
+//import bg from './images/bg.jpg';
 
 
 export default class App extends Component {
@@ -18,12 +18,12 @@ export default class App extends Component {
     this.state = {
       score: 0,
       round: 0,
-      answerList: Answers,
+      answers: Answers.answer
     }
   }
 
   checkAnswer(clicked) {
-    if (clicked === Answers.answer[this.state.round].correct) {
+    if (clicked === this.state.answers[this.state.round].correct) {
       this.updateScoreAndChangeRound();
     } else {
       this.moveToNextRound();
@@ -48,14 +48,16 @@ export default class App extends Component {
     wrong.play();
   }
 
-  changeDb () {
-    
+  //get initial state 
+  componentWillMount() {
+    console.log(Answers.answer);
   }
 
-  componentDidMount() {
+  newGame() {
     axios.get('http://localhost:4000')
-      .then(data => {
-        console.log(data);
+      .then(response => {
+        //console.log(response.data);
+      this.setState( Object.assign({}, this.state, {round: 0, score: 0, answers: response.data}) )
     })
   }
 
@@ -71,19 +73,19 @@ export default class App extends Component {
         <audio id="wrong" src={wrong}></audio>
     
         <div className="image-holder">
-          <img className="img" src={Answers.answer[this.state.round].image} alt=""/>
+          <img className="img" src={this.state.answers[this.state.round].image} alt=""/>
           <div className="buttons-holder">
-            <button className="btn" onClick={ this.checkAnswer.bind(this, Answers.answer[this.state.round].answer1)}>
-              {Answers.answer[this.state.round].answer1}
+            <button className="btn" onClick={ this.checkAnswer.bind(this, this.state.answers[this.state.round].answer1)}>
+              {this.state.answers[this.state.round].answer1}
             </button>
-            <button className="btn" onClick={ this.checkAnswer.bind(this, Answers.answer[this.state.round].answer2)}>
-              {Answers.answer[this.state.round].answer2}
+            <button className="btn" onClick={ this.checkAnswer.bind(this, this.state.answers[this.state.round].answer2)}>
+              {this.state.answers[this.state.round].answer2}
             </button>
-            <button className="btn" onClick={ this.checkAnswer.bind(this, Answers.answer[this.state.round].answer3)}>
-              {Answers.answer[this.state.round].answer3}
+            <button className="btn" onClick={ this.checkAnswer.bind(this, this.state.answers[this.state.round].answer3)}>
+              {this.state.answers[this.state.round].answer3}
             </button>
-            <button className="btn" onClick={ this.checkAnswer.bind(this, Answers.answer[this.state.round].answer4)}>
-              {Answers.answer[this.state.round].answer4}
+            <button className="btn" onClick={ this.checkAnswer.bind(this, this.state.answers[this.state.round].answer4)}>
+              {this.state.answers[this.state.round].answer4}
             </button>
 
             <div className="score-holder">
@@ -91,8 +93,8 @@ export default class App extends Component {
             </div>
             {/*<Countdown />*/}
            
-            <button className="newGame" onClick={ this.changeDb.bind(this) }>New Game</button>
-            {/*<ReactAudioPlayer className="audio" src={fame} autoPlay />*/}
+            <button className="newGame" onClick={ this.newGame.bind(this) } >New Game</button>
+            <ReactAudioPlayer className="audio" src={fame} autoPlay />
           </div>
         </div>
       </div>

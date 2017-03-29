@@ -7,7 +7,8 @@ const answerSchema = new Schema ({
   answer3: {type: String, required: true},
   answer4: {type: String, required: true},
   correct: {type: String, required: true},
-  image: {data: Buffer, contentType: String },
+  image: {type: String, required: true}
+  //image: {data: Buffer, contentType: String },
  
 })
 
