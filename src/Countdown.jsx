@@ -18,8 +18,8 @@ export default class Countdown extends Component {
   render() {
     return (
       <div>
-        {/*{setInterval(() => { this.state.secs - 2}, 1000)}*/}
-        <p>testing</p>
+        {setInterval(() => { this.setState({secs: this.state.secs - 1}) }, 1000)}
+        {/*{this.state.secs}*/}
       </div>
     );
   }

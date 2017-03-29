@@ -9,6 +9,7 @@
   "dependencies": {
     "body-parser": "^1.17.1",
     "express": "^4.15.2",
+    "mongodb": "^2.2.25",
     "mongoose": "^4.9.2",
     "react": "^15.4.2",
     "react-audio-player": "^0.3.3",
@@ -19,6 +20,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test --env=jsdom",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "server": "node server.js"
   }
 }

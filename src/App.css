@@ -90,6 +90,30 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#fb83fa', end
   letter-spacing: 3px;
 }
 
+.newGame {
+  position: relative;
+  top: 50px;
+  font-size: 20px;
+  text-transform: uppercase;
+  color: white;
+  font-weight: 300;
+  padding: 15px 40px;
+  border-radius: 15px;
+  margin: 20px 10px;
+  box-shadow: 3px 3px 3px rgba(0,0,0,0.6);
+  letter-spacing: 2px;
+
+  /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#3ed148+51,3dc43a+99 */
+background: #3ed148; /* Old browsers */
+background: -moz-radial-gradient(center, ellipse cover,  #3ed148 51%, #3dc43a 99%); /* FF3.6-15 */
+background: -webkit-radial-gradient(center, ellipse cover,  #3ed148 51%,#3dc43a 99%); /* Chrome10-25,Safari5.1-6 */
+background: radial-gradient(ellipse at center,  #3ed148 51%,#3dc43a 99%); /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3ed148', endColorstr='#3dc43a',GradientType=1 ); /* IE6-9 fallback on horizontal gradient */
+
+}
+
+
+
 .audio {
   margin-top: 130px;
 }

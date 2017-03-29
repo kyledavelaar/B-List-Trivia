@@ -11,29 +11,14 @@ import fame from './sound/fame.mp3';
 import bg from './images/bg.jpg';
 
 
-
 export default class App extends Component {
   constructor() {
     super();
     this.state = {
       score: 0,
       round: 0,
-      playAgain: false,
+      answerList: Answers,
     }
-  }
-
-  // startTimer() {
-  //   this.setState({outOfTime: false})
-
-  //   setTimeout(() => {
-  //     this.setState({outOfTime: true})
-  //   }, 4000)
-  // }
-
-  playAgain() {
-    return (
-      <div><button>{this.state.playAgain}</button></div>
-    )
   }
 
   checkAnswer(clicked) {
@@ -62,6 +47,10 @@ export default class App extends Component {
     wrong.play();
   }
 
+  changeDb () {
+
+  }
+
   render() {
     return (
       <div className="App" >
@@ -88,11 +77,13 @@ export default class App extends Component {
             <button className="btn" onClick={ this.checkAnswer.bind(this, Answers.answer[this.state.round].answer4)}>
               {Answers.answer[this.state.round].answer4}
             </button>
+
             <div className="score-holder">
               <h4 className="score" >SCORE: {this.state.score} </h4> 
             </div>
-             {/*   <Countdown />*/}
-            {this.state.playAgain && <Countdown />}
+            {/*<Countdown />*/}
+           
+            <button className="newGame" onClick={ this.changeDb.bind(this) }>New Game</button>
             {/*<ReactAudioPlayer className="audio" src={fame} autoPlay />*/}
           </div>
         </div>

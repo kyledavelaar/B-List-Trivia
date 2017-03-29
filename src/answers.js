@@ -50,14 +50,14 @@ module.exports = {
       image: felicity,
     },
     {
-    answer1: 'thank', 
-    answer2: 'you',
-    answer3: 'for',
-    answer4: 'playing',
-    correct: 'piggy',
-    winMessage: 'You Win', 
-    loseMessage: 'You Lose', 
-    image: end,
-  },
+      answer1: 'thank', 
+      answer2: 'you',
+      answer3: 'for',
+      answer4: 'playing',
+      correct: 'piggy',
+      winMessage: 'You Win', 
+      loseMessage: 'You Lose', 
+      image: end,
+    },
   ]
 }
