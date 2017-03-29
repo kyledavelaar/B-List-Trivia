@@ -3,6 +3,7 @@ import './App.css';
 import ReactAudioPlayer from 'react-audio-player';
 import Answers from './answers';
 import Countdown from './Countdown';
+import vid from './sound/lights.mp4';
 
 import correct from './sound/correct.mp3';
 import wrong from './sound/wrong.mp3';
@@ -64,6 +65,11 @@ export default class App extends Component {
   render() {
     return (
       <div className="App" >
+        <div className="vid-wrapper">
+          <video loop muted autoPlay className="vid">
+            <source src={vid} />
+          </video>
+        </div>
         <audio id="correct" src={correct}></audio>
         <audio id="wrong" src={wrong}></audio>
     
