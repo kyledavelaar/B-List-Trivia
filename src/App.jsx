@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
 import './App.css';
+import axios from 'axios';
 import ReactAudioPlayer from 'react-audio-player';
 import Answers from './answers';
 import Countdown from './Countdown';
@@ -48,7 +49,14 @@ export default class App extends Component {
   }
 
   changeDb () {
+    
+  }
 
+  componentDidMount() {
+    // axios.get('http://localhost:4000')
+    //   .then(data => {
+    //     console.log(data);
+    // })
   }
 
   render() {
