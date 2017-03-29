@@ -4,7 +4,15 @@ const mongoose = require('mongoose');
 const http = require('http');
 const bodyParser = require('body-parser');
 const answerController = require('./AnswerController');
+const answer = require('./AnswerModel');
 
+app.use(function(req, res, next) {
+  res.header("Access-Control-Allow-Origin", "*");
+  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, {'Content-Type': 'json/application'}, Accept");
+  res.setHeader('Access-Control-Allow-Methods', 'OPTIONS, GET'); 
+  //next handles program flow so req and res are set properly for each function 
+  next();
+});
 
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
@@ -17,20 +25,19 @@ mongoose.connection.once('open', () => {
   console.log('CONNECTED TO DATABASE');
 });
 
+// answer.image.data = fs.readFileSync('./images/end');
+// answer.image.contentType = 'image/jpg';
+// answer.save((err, a) => {
+//   if (err) throw err
+// })
 
-const answerRouter = express.Router();
 
-// Create a student in the database
-// localhost://3000/student
-//answerRouter.post('/', answerController.createAnswers);
 app.post('/', answerController.createAnswers);
 
-// Get an answerlist from the database
-// localhost://3000/answer/"name"
+
 app.get('/', answerController.getAnswer);
 
 
-//app.use('/student', answerRouter);
 
 app.listen(4000, () => console.log('LISTENING AT 4000'));
 
