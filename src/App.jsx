@@ -9,7 +9,6 @@ import vid from './sound/lights.mp4';
 import correct from './sound/correct.mp3';
 import wrong from './sound/wrong.mp3';
 import fame from './sound/fame.mp3';
-//import bg from './images/bg.jpg';
 
 
 export default class App extends Component {
@@ -18,6 +17,7 @@ export default class App extends Component {
     this.state = {
       score: 0,
       round: 0,
+      game: 1,
       answers: Answers.answer
     }
   }
@@ -48,16 +48,15 @@ export default class App extends Component {
     wrong.play();
   }
 
-  //get initial state 
-  componentWillMount() {
-    console.log(Answers.answer);
-  }
 
   newGame() {
     axios.get('http://localhost:4000')
       .then(response => {
-        //console.log(response.data);
-      this.setState( Object.assign({}, this.state, {round: 0, score: 0, answers: response.data}) )
+      if (this.state.game === 1) {
+        this.setState( Object.assign({}, this.state, {game: 2, round: 0, score: 0, answers: response.data.slice(0,5)}) )
+      } else if (this.state.game === 2) {
+        this.setState( Object.assign({}, this.state, {game: 3, round: 0, score: 0, answers: response.data.slice(6,10)}) )
+      }
     })
   }
 
@@ -94,7 +93,9 @@ export default class App extends Component {
             {/*<Countdown />*/}
            
             <button className="newGame" onClick={ this.newGame.bind(this) } >New Game</button>
-            <ReactAudioPlayer className="audio" src={fame} autoPlay />
+            <div>
+              <ReactAudioPlayer className="audio" src={fame} autoPlay />
+            </div>
           </div>
         </div>
       </div>

@@ -25,19 +25,12 @@ mongoose.connection.once('open', () => {
   console.log('CONNECTED TO DATABASE');
 });
 
-// answer.image = fs.readFileSync('./src/images/end.jpg');
-// answer.image.contentType = 'image/jpg';
-// answer.save((err, a) => {
-//   if (err) throw err
-// })
-
 
 app.post('/', answerController.createAnswers);
 
 app.get('/', answerController.getAnswer);
 
 app.listen(4000, () => console.log('LISTENING AT 4000'));
-
 
 
 

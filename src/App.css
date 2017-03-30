@@ -112,12 +112,9 @@ filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#3ed148', end
 
 }
 
-
-
 .audio {
-  position: fixed;
-  bottom: 50px;
-  left: 550px;
+  position: relative;
+  top: 80px;
 }
 
 
