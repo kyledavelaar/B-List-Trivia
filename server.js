@@ -31,20 +31,3 @@ app.post('/', answerController.createAnswers);
 app.get('/', answerController.getAnswer);
 
 app.listen(4000, () => console.log('LISTENING AT 4000'));
-
-
-
-
-
-
-
-
-
-
-
-// const server = http.createServer(app);
-
-// server.listen(3000, () => {
-//   console.log('SERVER LISTENING');
-// })
-// module.exports = server;

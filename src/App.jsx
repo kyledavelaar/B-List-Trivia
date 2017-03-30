@@ -90,8 +90,7 @@ export default class App extends Component {
             <div className="score-holder">
               <h4 className="score" >SCORE: {this.state.score} </h4> 
             </div>
-            {/*<Countdown />*/}
-           
+
             <button className="newGame" onClick={ this.newGame.bind(this) } >New Game</button>
             <div>
               <ReactAudioPlayer className="audio" src={fame} autoPlay />
