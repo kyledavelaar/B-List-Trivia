@@ -53,9 +53,11 @@ export default class App extends Component {
     axios.get('http://localhost:4000')
       .then(response => {
       if (this.state.game === 1) {
-        this.setState( Object.assign({}, this.state, {game: 2, round: 0, score: 0, answers: response.data.slice(0,5)}) )
+        this.setState( Object.assign({}, this.state, {game: 2, round: 0, score: 0, answers: response.data.slice(0,6)}) )
+        console.log('GAME 2', this.state.answers )
       } else if (this.state.game === 2) {
-        this.setState( Object.assign({}, this.state, {game: 3, round: 0, score: 0, answers: response.data.slice(6,10)}) )
+        this.setState( Object.assign({}, this.state, {game: 3, round: 0, score: 0, answers: response.data.slice(6,12)}) )
+        console.log('GAME 3', this.state.answers )
       }
     })
   }
